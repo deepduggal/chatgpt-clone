@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./styles/pages/about.css">
+  <!-- Google Font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap"
+    rel="stylesheet">
+  <title>ChatGPT Clone | About</title>
+  <!-- <script defer src=""></script> -->
+</head>
+
+<body>
+  <article>
+    <h1 class="title">About Deep's ChatGPT Clone</h1>
+    <h2>Note to Instructor(s)/Grader(s)</h2>
+    <p>The API key will be deleted after grading. The API requests will stop working after the $5 budget is reached. A
+      short message costs < $0.01.</p>
+        <p>To save on costs, the responses are short (max 50 chars) and sentences may be cut off.</p>
+        <p>Since the chat completions API accepts a set of messages and chat history must be sent with every request,
+          only the most recent message is sent. Essentially ChatGPT cannot remember (even if past chats were/are stored
+          offline).</p>
+        <h2>What is this?</h2>
+        <p>This ChatGPT clone uses the Open AI API, specifically the chat completions API. ChatGPT is software that
+          provides responses to sets of textual chat messages. It can do many tasks and follow instructions (must be
+          included in each message for now).</p>
+        <h2>Features</h2>
+        <ul>
+          <li>Send a message to ChatGPT</li>
+          <li>Receive a response from ChatGPT</li>
+          <li>Chat history is displayed</li>
+          <li>The user can have multiple chat conversatons and maintain separate histories for each chat conversation.
+          </li>
+          <li>Not ready yet: Chat history is stored in the browser's local storage</li>
+        </ul>
+        <h2>Chat History</h2>
+        <p>Chat history is not yet stored in the browser's local storage. This means that chat history will be lost if
+          the
+          browser cache is cleared or if the page is refreshed. The code for is there and should work, but I haven't
+          added the offline storage feature yet due to time constraints (testing, debugging, etc.)</p>
+  </article>
+</body>
+
+</html>

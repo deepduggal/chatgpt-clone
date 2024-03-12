@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="stylesheet" href="./styles/pages/index.css">
+  <!-- Google Font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap"
+    rel="stylesheet">
+  <title>ChatGPT Clone</title>
+  <script defer src="./scripts/index.js" type="module"></script>
+</head>
+
+<body>
+  <section class="chats">
+    <!-- Add a new chat -->
+    <form class="newChatForm">
+      <button type="submit">+ New Chat</button>
+    </form>
+    <div class="chats__options">
+      <!-- Will populate with 1+ .chat__option -->
+    </div>
+  </section>
+  <main class="chat">
+    <!-- Past messages of a chat -->
+    <div class="chat__history">
+      <!-- Will populate with 1+ .chat__message -->
+    </div>
+    <!-- Add a new message -->
+    <form class="newMessageForm">
+      <input type="text" placeholder="Type a message..." name="newMessage" />
+      <button type="submit">Send</button>
+    </form>
+  </main>
+</body>
+
+</html>

@@ -1,0 +1,20 @@
+.newMessageForm {
+  display: flex;
+  flex-direction: row;
+
+  input {
+    flex-grow: 1;
+    padding: 0.75rem;
+    border-radius: 1rem;
+  }
+
+  button[type="submit"] {
+    border-radius: 1rem;
+    cursor: pointer;
+    transition: background-color 0.1s cubic-bezier(0.4, 0, 0.2, 1);
+
+    &:hover {
+      background-color: #fff;
+    }
+  }
+}

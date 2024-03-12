@@ -1,0 +1,11 @@
+.newChatForm {
+  display: flex;
+  padding: 1rem 0.5rem;
+
+  button[type="submit"] {
+    border-radius: 1rem;
+    width: 100%;
+    padding: 0.5rem;
+    cursor: pointer;
+  }
+}

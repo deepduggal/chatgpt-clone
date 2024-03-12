@@ -1,0 +1,108 @@
+/**
+ * Set up a decent box model on the root element
+ */
+html {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+}
+
+/**
+ * Make all elements from the DOM inherit from the parent box-sizing
+ * Since `*` has a specificity of 0, it does not override the `html` value
+ * making all elements inheriting from the root box-sizing value
+ * See: https://css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice/
+ */
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+body {
+  display: flex;
+  background-color: #343541;
+  color: #fff;
+  font-family: "Open Sans", sans-serif;
+}
+
+.chats {
+  background-color: #202123;
+  width: 30.5rem;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+.chats__options {
+  overflow-y: auto;
+}
+.chats__option {
+  flex: 1;
+  text-align: center;
+  cursor: pointer;
+}
+
+.chat {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 1rem 2rem;
+  width: 100%;
+}
+.chat__history {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  overflow-y: auto;
+  max-height: calc(100vh - 6rem);
+}
+.chat__message {
+  opacity: 1;
+}
+
+.message__username {
+  font-weight: 600;
+  animation: fade-in 0.1s ease-in-out;
+}
+.message__content {
+  animation: fade-in 0.2s ease-in-out;
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+.newChatForm {
+  display: flex;
+  padding: 1rem 0.5rem;
+}
+.newChatForm button[type=submit] {
+  border-radius: 1rem;
+  width: 100%;
+  padding: 0.5rem;
+  cursor: pointer;
+}
+
+.newMessageForm {
+  display: flex;
+  flex-direction: row;
+}
+.newMessageForm input {
+  flex-grow: 1;
+  padding: 0.75rem;
+  border-radius: 1rem;
+}
+.newMessageForm button[type=submit] {
+  border-radius: 1rem;
+  cursor: pointer;
+  transition: background-color 0.1s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.newMessageForm button[type=submit]:hover {
+  background-color: #fff;
+}/*# sourceMappingURL=index.css.map */
