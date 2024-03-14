@@ -105,4 +105,14 @@ body {
 }
 .newMessageForm button[type=submit]:hover {
   background-color: #fff;
+}
+
+nav {
+  position: fixed;
+  bottom: 0.5rem;
+  left: 0.5rem;
+}
+nav a {
+  padding: 0.5rem;
+  color: #fff;
 }/*# sourceMappingURL=index.css.map */

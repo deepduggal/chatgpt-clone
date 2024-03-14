@@ -30,4 +30,14 @@ body {
 
 body {
   padding: 1rem;
+}
+
+nav {
+  position: fixed;
+  bottom: 0.5rem;
+  left: 0.5rem;
+}
+nav a {
+  padding: 0.5rem;
+  color: #fff;
 }/*# sourceMappingURL=about.css.map */

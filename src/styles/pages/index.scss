@@ -9,3 +9,15 @@
 //   font-size: 4.125rem;
 //   font-weight: 600;
 // }
+
+nav {
+  position: fixed;
+  bottom: 0.5rem;
+  left: 0.5rem;
+
+  a {
+    padding: 0.5rem;
+    color: base.$fontColor;
+    // text-decoration: none;
+  }
+}
