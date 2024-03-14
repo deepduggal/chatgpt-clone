@@ -1,5 +1,5 @@
 window.process = { env: { OPENAI_API_KEY: null } };
-// process.env.OPENAI_API_KEY = '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'; // @todo
+// process.env.OPENAI_API_KEY = '';
 
 // A sample response from the chatgpt api
 const sampleResponse = {
