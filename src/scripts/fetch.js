@@ -1,6 +1,5 @@
-let process = { env: {} };
-// process.env.OPENAI_API_KEY = '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'; // @todo
-process.env.OPENAI_API_KEY = 'sk-3z';
+window.process = { env: { OPENAI_API_KEY: null } };
+// process.env.OPENAI_API_KEY = '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'; // @todo
 
 // A sample response from the chatgpt api
 const sampleResponse = {
@@ -57,7 +56,7 @@ export class OpenAI {
     if (OpenAI.instance) {
       return OpenAI.instance;
     }
-    this.apiKey = process.env.OPENAI_API_KEY; //@todo
+    // this.apiKey = process.env.OPENAI_API_KEY; // @todo fix bc did an api key push issue workaround
     this.urls = {
       completions: 'https://api.openai.com/v1/chat/completions'
     };
@@ -67,30 +66,35 @@ export class OpenAI {
    * Gets a message from the ChatGPT API
    */
   async fetchChatbotReply(userMessage) {
+    // Workaround bc can't publish api key
+    if (process.env.OPENAI_API_KEY === null) {
+      return 'SEE THE SUBMISSION. ADD API KEY VIA CONSOLE!/n' + sampleResponse.choices[0].message.content;
+    }
+
     try {
       const options = {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
-          'Authorization': `Bearer ${this.apiKey}`
+          'Authorization': `Bearer ${window.process.env.OPENAI_API_KEY}`
         },
         body: JSON.stringify({
           model: "gpt-3.5-turbo",
           messages: [
-            { role: "system", content: "You are a helpful chatbot." },
+            { role: "system", content: "You are a helpful, funny, sarcastic chatbot." },
             // { role: "user", content: "What is the meaning of life?" },
             { role: "user", content: userMessage }
           ],
           max_tokens: 50
         })
       };
-      const data = sampleResponse;
-      // const data = await moxios(this.urls.completions, options);
+      // const data = sampleResponse;
+      const data = await moxios(this.urls.completions, options);
       return data.choices[0].message.content;
     }
 
     catch (error) {
-      throw error;
+      throw error; // K.I.S.S. for now. @todo
     }
 
   }
